@@ -14,19 +14,13 @@
             isMobile = isiOS || isAndroid,
             isDesktop = !isMobile;
         // Define all the potential redirection Urls
-        var deepLink = 'uber://?action=applyPromo&promo=POOLFIVER',
-            appStoreUrl = 'https://itunes.apple.com/us/app/uber/id368677368',
-            androidIntentUrl = 'intent://uber/#Intent;package=com.ubercab;scheme=uber;end',
-            muberDotCom = 'http://t.uber.com/poolpromo';
-        // Handle each case with a seamless fallback to the application store on mobile devices
+        var deepLink = 'uber://?action=applyPromo&promo=POOLFIVER';
+        
         if (isiOS) {
           window.location = deepLink;
-          setTimeout(function() { window.location = appStoreUrl; }, 25);
-        } else if (isAndroid) {
-          window.location = androidIntentUrl;
-        } else if (isDesktop) {
-          window.location = muberDotCom;
-        }
+        } else  {
+          window.location = deepLink;
+        } 
       });
     </script>
   </head>
